@@ -2,7 +2,7 @@ import yfinance as yf
 import numpy as np
  
 # Step 1: Download AMZN financial data
-ticker = 'ITC.NS'
+ticker = 'AMZN'
 stock = yf.Ticker(ticker)
  
 # Step 2: Extract Free Cash Flow (FCF) - trailing 12 months
@@ -14,7 +14,7 @@ fcf_ttm = fcf_ttm if fcf_ttm > 0 else abs(fcf_ttm)
 growth_rate = 0.10       # 12% annual FCF growth for first 5 years
 terminal_growth = 0.03   # 3% perpetual growth rate
 discount_rate = 0.10     # 10% discount rate
-years = 5
+years = 10
  
 # Step 4: Forecast future FCFs
 fcf_forecast = []
